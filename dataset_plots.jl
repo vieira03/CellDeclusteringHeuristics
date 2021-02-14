@@ -4,15 +4,12 @@ using GeoStats
 using Plots
 
 
+# importing dataset
 fe_df = DataFrame(CSV.File("datasets/Ferro.csv")) 
+describe(fe_df)
 
-
+# plotting georeferred dataframe
 fe_georef = georef(fe_df, (:X, :Y, :Z))
-
-sp = sample(fe_georef, 50, fe_georef[:Fe], replace=false)
-
-# 
-
 plot(fe_georef, camera=(30,60))
 
 
