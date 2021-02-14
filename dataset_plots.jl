@@ -14,12 +14,12 @@ plot(fe_georef)
 
 
 # mean value x block size 
-sp = sample(fe_georef, 500, fe_georef[:Fe], replace=false)
+sp = sample(fe_georef, 60, fe_georef[:Fe], replace=false)
 true_av = mean(fe_georef[:Fe])
 sample_av = mean(sp[:Fe])
 
 
-block_sizes = range(20, stop=120, length=100)     
+block_sizes = range(20, stop=400, length=140)     
 means = [mean(sp, :Fe, block) for block in block_sizes] 
 
 
